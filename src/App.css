@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-collapse: collapse;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.table thead th {
+  
+    background: rgb(165, 17, 17);
+    position: sticky;
+    top: 0; 
   color: white;
+  vertical-align: bottom;
+  border-bottom: 2px solid #18436e;
 }
 
-.App-link {
-  color: #61dafb;
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.table tbody tr:hover {
+  background-color: violet;
+  color: black;
+  font-weight: 400;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #26aac2;
+}
+
+.table tbody tr:nth-child(odd):hover {
+  background-color: coral;
+}
+
+/* Responsive styles */
+@media (max-width: 390px) {
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  to {
-    transform: rotate(360deg);
+  th {
+    display: none;
+    position: sticky;
+    top: 0; 
+  }
+  
+  .table {
+    margin-bottom: 0;
+    background-color: transparent;
+    border-collapse: separate;
+  }
+  
+  .table thead {
+    display: none;
+  }
+  
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #07366e;
+    border: 1px solid #dee2e6;
+  }
+  
+  .table tbody td {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  
+  .table tbody td::before {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .table tbody td::before {
+    float: left;
+    text-transform: uppercase;
+    color: #999999;
   }
 }
